@@ -3,7 +3,7 @@ import ProductsHeading from "./Common/ProductsHeading";
 import { DownArrow, UpArrow } from "../../Icons";
 
 const FAQ = () => {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState();
 
   const questions = [
     {

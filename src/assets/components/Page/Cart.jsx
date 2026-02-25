@@ -23,10 +23,6 @@ const Cart = () => {
 
   const [filteredItem, setFilteredItem] = useState(localData);
 
-  let mappedData = filteredItem.map((item) => {
-    return item.price;
-  });
-
   filteredItem.map((item) => {
     let sliced = item.price.slice(1);
     totalPrice += Number(sliced);
@@ -36,7 +32,6 @@ const Cart = () => {
     let f = filteredItem.filter((item) => value !== item);
     setFilteredItem(f);
     console.log(f);
-
     localStorage.setItem("Products", JSON.stringify(f));
   };
 

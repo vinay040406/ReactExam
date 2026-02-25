@@ -7,7 +7,7 @@ import QuickLinks from "./Common/QuickLinks";
 const Footer = () => {
   return (
     <div className="flex flex-col">
-      <div className="bg-[rgba(241,241,241)] lg:h-113.5 h-auto max-w-full md:px-10 px-3 flex xl:flex-row flex-col justify-between items-center">
+      <div className="bg-[rgba(241,241,241)] xl:h-113.5 h-fit max-w-full md:px-10 px-3 flex xl:flex-row flex-col justify-between items-center">
         <img
           className="h-full max-w-93 w-full object-fit "
           src="/Images/footer1.png"
@@ -26,7 +26,7 @@ const Footer = () => {
             onSubmit={(e) => {
               e.preventDefault();
             }}
-            className="flex max-w-133 w-full  justify-between mt-10 border border-[#4141431A] p-2"
+            className="flex max-w-133 w-full justify-between mt-10 border border-[#4141431A] p-2"
           >
             <input
               className="w-full px-3 mr-3 outline-[#01C6B5]"

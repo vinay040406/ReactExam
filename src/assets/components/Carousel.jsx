@@ -1,30 +1,31 @@
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 import Button from "./Common/Button";
 import { carouselArray } from "../Data/PageData";
 
 const Carousel = () => {
-  //   useEffect(() => {
-  //     let scrollAmount = 0;
-  //     const scrollPerClick = window.clientWidth;
-  //     const carousel = document.querySelector(".parent");
+  useEffect(() => {
+    const carousel = document.querySelector(".parent");
+    let scrollAmount = 0;
+    const scrollPerClick = window.innerWidth;
 
-  //     const scrollInterval = setInterval(() => {
-  //       if (scrollAmount < carousel.scrollWidth - carousel.clientWidth) {
-  //         scrollAmount += scrollPerClick;
-  //         carousel.scrollTo({
-  //           left: scrollAmount,
-  //           behavior: "smooth",
-  //         });
-  //       } else {
-  //         scrollAmount = 0;
-  //         carousel.scrollTo({
-  //           left: 0,
-  //           behavior: "smooth",
-  //         });
-  //       }
-  //     }, 3000);
-  //     return () => clearInterval(scrollInterval);
-  //   }, []);
+    const scrollInterval = setInterval(() => {
+      if (scrollAmount < carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount += scrollPerClick;
+        carousel.scrollTo({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+      } else {
+        scrollAmount = 0;
+        carousel.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    }, 3000);
+
+    return () => clearInterval(scrollInterval);
+  }, []);
 
   return (
     <div className="w-full flex overflow-y-hidden parent">
