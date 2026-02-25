@@ -43,7 +43,7 @@ const Navbar = () => {
         </Link>
         <ul
           // className={`md:flex hidden gap-6 py-5 md:relative fixed top-0 left-0  menu  duration-200 ease-in md:flex-row flex-col md:h-auto md:w-auto justify-center items-center h-screen w-screen  md:bg-transparent bg-[rgba(1,198,181,1)] ${hamburgerState ? "" : ""}`}
-          className={` ${hamburgerState ? "show" : ""} flex gap-6 menu`}
+          className={` ${hamburgerState ? "show" : ""} flex gap-6 menu py-5`}
         >
           <Link to={"/"}>
             <li>Home</li>

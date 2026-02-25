@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="bg-[rgba(241,241,241)] lg:h-113.5 h-auto max-w-full md:px-10 px-3 flex xl:flex-row flex-col justify-between items-center">
         <img
           className="h-full max-w-93 w-full object-fit "
-          src="public/Images/footer1.png"
+          src="/Images/footer1.png"
           alt=""
         />
         <div className="flex flex-col items-center px-3">
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
         <img
           className="h-full w-fit object-cover  "
-          src="public/Images/footer2.png"
+          src="/Images/footer2.png"
           alt=""
         />
       </div>
