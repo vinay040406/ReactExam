@@ -12,7 +12,7 @@ const Cart = () => {
 
   useEffect(() => {
     const productsData = JSON.parse(localStorage.getItem("Products"));
-    if (productsData.length > 0) {
+    if (productsData?.length > 0) {
       navigate("/cart");
     } else {
       navigate("/");
@@ -62,7 +62,7 @@ const Cart = () => {
             <span>Total</span>
           </div>
           <div className="flex flex-col md:p-6 p-2 md:gap-6 gap-4">
-            {filteredItem.map((item, index) => (
+            {filteredItem?.map((item, index) => (
               <div key={index} className="flex justify-between items-center">
                 <div className="flex gap-3 items-center md:flex-row flex-col text-center">
                   <img

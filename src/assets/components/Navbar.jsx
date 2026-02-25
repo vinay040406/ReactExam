@@ -17,7 +17,7 @@ const Navbar = ({ navRightCss, navRight }) => {
   };
 
   return (
-    <div className="sticky top-0 flex flex-col max-w-360 w-full z-100 ">
+    <div className="sticky top-0 flex flex-col max-w-360 w-full z-1000 ">
       <div className="w-full bg-white flex md:justify-between justify-center xl:px-30  md:px-10 py-3">
         <div className="flex items-center gap-2 text-center ">
           <FreeIcon />

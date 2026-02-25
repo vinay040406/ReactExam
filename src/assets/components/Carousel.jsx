@@ -32,7 +32,7 @@ const Carousel = () => {
       {carouselArray.map((item, index) => (
         <div
           key={index}
-          className="w-full shrink-0  flex justify-center items-center "
+          className="w-full shrink-0  flex justify-center items-center"
         >
           <div className="max-w-360 relative w-full flex justify-center flex-col bg-[linear-gradient(to_right,rgba(0,0,0,0),rgba(0,0,0,1))]">
             <img

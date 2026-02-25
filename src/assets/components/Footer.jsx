@@ -3,6 +3,7 @@ import ProductsHeading from "./Common/ProductsHeading";
 import Button from "./Common/Button";
 import { Facebook, LinkedIn, Twitter, Youtube } from "../../Icons";
 import QuickLinks from "./Common/QuickLinks";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -54,7 +55,18 @@ const Footer = () => {
             </h5>
             <span className="text-xl font-medium">Follow us On :</span>
             <div className="flex gap-3 flex-wrap">
-              <Youtube /> <Facebook /> <LinkedIn /> <Twitter />
+              <Link to={"www.youtube.com/@radialcode"}>
+                <Youtube />
+              </Link>
+              <Link to={"facebook.com/RadialCode"}>
+                <Facebook />
+              </Link>
+              <Link to={""}>
+                <LinkedIn />
+              </Link>
+              <Link to={"twitter.com/RadialCode"}>
+                <Twitter />
+              </Link>
             </div>
           </div>
           <div className="flex justify-between max-w-120 w-full">

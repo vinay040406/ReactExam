@@ -43,7 +43,7 @@ const ProductCard = ({
         <Button
           onClick={onClick}
           text={"Add To Cart"}
-          padding={"px-8 py-4 z-10000 bg-[rgba(1,198,181,1)] text-white"}
+          padding={"px-8 py-4 z-100 bg-[rgba(1,198,181,1)] text-white"}
         />
       </div>
       <span
