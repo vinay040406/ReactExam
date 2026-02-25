@@ -8,11 +8,11 @@ import QuickLinks from "../Common/QuickLinks";
 
 const Cart = () => {
   const navigate = useNavigate();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   useEffect(() => {
     const productsData = JSON.parse(localStorage.getItem("Products"));
-    if (productsData) {
+    if (productsData.length > 0) {
       navigate("/cart");
     } else {
       navigate("/");
@@ -25,25 +25,27 @@ const Cart = () => {
   const [filteredItem, setFilteredItem] = useState(localData);
 
   filteredItem.map((item) => {
-    let sliced = item.price.slice(1);
+    let sliced = Number(item.price.slice(1));
     totalPrice += Number(sliced);
   });
 
   const handleTrash = (value) => {
     let f = filteredItem.filter((item) => value !== item);
     setFilteredItem(f);
-    console.log(f);
     localStorage.setItem("Products", JSON.stringify(f));
-  };
-
-  const handlePlus = () => {
-    setValue(value + 1);
-    console.log();
   };
 
   return (
     <div className="w-full flex justify-center flex-col gap-30 items-center">
-      <Navbar navRight={<QuickLinks  custom={"flex gap-0.5 px-2"}  li={"xxl:flex hidden items-center whitespace-nowrap"}/>} navRightCss={"hidden"} />
+      <Navbar
+        navRight={
+          <QuickLinks
+            custom={"flex gap-0.5 px-2"}
+            li={"xxl:flex hidden items-center whitespace-nowrap"}
+          />
+        }
+        navRightCss={"hidden"}
+      />
       <div className="w-full max-w-360 flex flex-col gap-10 mb-20">
         <div className="flex md:justify-between  items-center">
           <ProductsHeading heading={"Your Cart "} />
@@ -83,12 +85,16 @@ const Cart = () => {
                     <span className="md:px-5 p-3 md:py-3 md:text-xl text-base font-normal border border-[#4141431A]">
                       {value}
                     </span>
-                    <Plus onClick={() => handlePlus()} />
+                    <Plus
+                      onClick={() => {
+                        value && setValue(value + 1);
+                      }}
+                    />
                   </div>
                   <Trash onClick={() => handleTrash(item)} />
                 </div>
                 <span className="md:text-xl text-base font-medium">
-                  {item.price}
+                  {Number(item.price.slice(1)).toPrecision(3) * value}
                 </span>
               </div>
             ))}
@@ -97,12 +103,15 @@ const Cart = () => {
             <div className="flex flex-col gap-4 max-w-82 w-full">
               <div className="flex justify-between text-lg font-semibold">
                 <span>Estimated total </span>
-                <span>Dhs.{totalPrice.toFixed(3)} AED </span>
+                <span>Dhs.{totalPrice.toPrecision(3) * value} AED </span>
               </div>
               <p className="text-base font-normal tracking-wide text-[#414143]">
                 Taxes, discounts and shipping calculated at checkout.{" "}
               </p>
-              <Button text={"Checkout"} padding={"py-3"} />
+              <Button
+                text={"Checkout"}
+                padding={"py-3 bg-[rgba(1,198,181,1)] text-white"}
+              />
             </div>
           </div>
         </div>

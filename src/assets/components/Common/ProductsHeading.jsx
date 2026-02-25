@@ -1,6 +1,3 @@
-import React from "react";
-import { LeftArrow, RightArrow } from "../../../Icons";
-
 const ProductsHeading = ({ heading, desc, customize, svg1, svg2 }) => {
   return (
     <div

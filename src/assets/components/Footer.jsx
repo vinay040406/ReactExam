@@ -33,7 +33,11 @@ const Footer = () => {
               type="text"
               placeholder="Email Address"
             />
-            <Button type={"submit"} text={"Subscribe"} padding={"px-6 py-3"} />
+            <Button
+              type={"submit"}
+              text={"Subscribe"}
+              padding={"px-6 py-3 bg-[rgba(1,198,181,1)] text-white"}
+            />
           </form>
         </div>
         <img
@@ -56,7 +60,7 @@ const Footer = () => {
           <div className="flex justify-between max-w-120 w-full">
             <div className="flex flex-col gap-3">
               <h5 className="text-xl font-medium">Quick Links</h5>
-              <QuickLinks li={"flex"} />
+              <QuickLinks li={"flex"} custom={"gap-4 flex flex-col"} />
             </div>
             <div className="flex flex-col gap-3">
               <h5 className="text-xl font-medium">Other Links</h5>

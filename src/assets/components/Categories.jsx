@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ProductsHeading from "./Common/ProductsHeading";
 import ProductCard from "./Common/ProductCard";
 import Button from "./Common/Button";
@@ -16,7 +15,14 @@ const Categories = () => {
       <ProductsHeading
         customize={"justify-between"}
         heading={"SHOP OUR CATEGORIES"}
-        svg1={<Button text={"View All"} padding={"px-6 py-3 whitespace-nowrap"} />}
+        svg1={
+          <Button
+            text={"View All"}
+            padding={
+              "px-6 py-3 whitespace-nowrap bg-[rgba(1,198,181,1)] text-white"
+            }
+          />
+        }
         desc={"Use this area to describe the collection."}
       />
       <div className="flex flex-wrap justify-center gap-10">

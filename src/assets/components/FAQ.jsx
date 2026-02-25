@@ -35,7 +35,7 @@ const FAQ = () => {
           heading={"Frequently Asked Questions"}
           desc={"Real Questions. Expert Answers. Total Confidence."}
         />
-        <div className="flex flex-col gap-6 lg:px-30">
+        <div className="flex flex-col gap-6">
           {questions.map((item, index) => (
             <div
               key={index}

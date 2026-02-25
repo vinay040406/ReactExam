@@ -11,7 +11,12 @@ const Blog = () => {
         <ProductsHeading
           customize={"justify-between"}
           heading={"From The Blog"}
-          svg1={<Button text={"View All Blogs"} padding={"px-6 py-3"} />}
+          svg1={
+            <Button
+              text={"View All Blogs"}
+              padding={"px-6 py-3 bg-[rgba(1,198,181,1)] text-white"}
+            />
+          }
         />
       </div>
       <div className="w-full flex justify-center mt-10 flex-wrap gap-13">

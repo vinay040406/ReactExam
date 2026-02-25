@@ -1,7 +1,7 @@
 import React from "react";
 import ProductsHeading from "./Common/ProductsHeading";
 import ProductCard from "./Common/ProductCard";
-import { LeftArrow, Rating, RightArrow } from "../../Icons";
+import { LeftArrow, RightArrow } from "../../Icons";
 import { trendingData } from "../Data/PageData";
 import Button from "./Common/Button";
 
@@ -40,7 +40,12 @@ const Trending = () => {
                 <span className="font-bold text-2xl">{item.price}</span>
                 <span>{item.ratingSrc}</span>
               </div>
-              <Button  text={"Shop Now"} padding={"py-3"}/>
+              <Button
+                text={"Shop Now"}
+                padding={
+                  "py-3 border border-[#414143] text-black hover:bg-[rgba(1,198,181,1)] hover:text-white"
+                }
+              />
             </div>
           </div>
         ))}

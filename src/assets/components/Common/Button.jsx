@@ -5,7 +5,7 @@ const Button = ({ padding, text, onClick, type }) => {
     <button
       type={type}
       onClick={onClick}
-      className={`${padding} hover:scale-102 text-white text-xl font-medium bg-[rgba(1,198,181,1)]`}
+      className={`${padding} hover:scale-102 text-xl font-medium `}
     >
       {text}
     </button>

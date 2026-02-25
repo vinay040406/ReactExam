@@ -1,4 +1,3 @@
-import React from "react";
 import { DownArrow } from "../../../Icons";
 
 const QuickLinks = ({ custom, li }) => {
@@ -20,9 +19,7 @@ const QuickLinks = ({ custom, li }) => {
         <li className="md:flex hidden items-center whitespace-nowrap">
           Jewelry & Wellness <DownArrow />
         </li>
-        <li
-          className={`md:flex hidden items-center whitespace-nowrap`}
-        >
+        <li className={`md:flex hidden items-center whitespace-nowrap`}>
           Accessories <DownArrow />
         </li>
         <li className={`md:flex hidden whitespace-nowrap`}>Size Guide</li>

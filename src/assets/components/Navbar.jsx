@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Cart, FreeIcon, Search, User } from "../../Icons";
 import { Link, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
+
 import { RxCross2 } from "react-icons/rx";
 
 const Navbar = ({ navRightCss, navRight }) => {
+  const navigate = useNavigate();
+  const inputRef = useRef();
+  const [inputValue, setInputValue] = useState();
   const [hamburgerState, setHamburgerState] = useState(false);
   const existingProducts = JSON.parse(localStorage.getItem("Products"));
-  
 
-  const navigate = useNavigate();
+  const handleSearchClick = () => {
+    inputRef.current.style.display = "block";
+  };
+
   return (
     <div className="sticky top-0 flex flex-col max-w-360 w-full z-100 ">
       <div className="w-full bg-white flex md:justify-between justify-center xl:px-30  md:px-10 py-3">
@@ -19,8 +25,18 @@ const Navbar = ({ navRightCss, navRight }) => {
             Free Delivery & Free Returns Within 15 Days
           </p>
         </div>
+        <input
+          ref={inputRef}
+          type="text "
+          value={inputValue}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+          }}
+          className="border border-[rgba(1,198,181,1)] hidden max-w-100 px-3 py-1 w-full rounded-lg"
+          placeholder="Search for Products"
+        />
         <div className="gap-2 hidden md:flex">
-          <Search />
+          <Search onClick={handleSearchClick} />
           <User />
           <div className=" border relative border-[rgba(1,198,181,1)] flex justify-center items-center w-[29.96px] rounded-full">
             <Cart

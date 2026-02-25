@@ -1,4 +1,4 @@
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 import Button from "./Common/Button";
 import { carouselArray } from "../Data/PageData";
 
@@ -50,7 +50,10 @@ const Carousel = () => {
               <p className="md:text-[20px] text-base font-normal">
                 {item.desc}
               </p>
-              <Button text={" Shop Now"} padding={"px-6 py-3 mt-4"} />
+              <Button
+                text={" Shop Now"}
+                padding={"px-6 py-3 mt-4 bg-[rgba(1,198,181,1)] text-white"}
+              />
             </div>
           </div>
         </div>
