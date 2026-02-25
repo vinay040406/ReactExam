@@ -56,11 +56,11 @@ const Footer = () => {
           <div className="flex justify-between max-w-120 w-full">
             <div className="flex flex-col gap-3">
               <h5 className="text-xl font-medium">Quick Links</h5>
-              <QuickLinks />
+              <QuickLinks li={"flex"} />
             </div>
             <div className="flex flex-col gap-3">
               <h5 className="text-xl font-medium">Other Links</h5>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-5">
                 <li>Privacy Policy</li>
                 <li>Terms of Service</li>
                 <li>Terms of Service</li>

@@ -4,6 +4,7 @@ import ProductsHeading from "../Common/ProductsHeading";
 import { Minus, Plus, Trash } from "../../../Icons";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../Common/Button";
+import QuickLinks from "../Common/QuickLinks";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ const Cart = () => {
 
   return (
     <div className="w-full flex justify-center flex-col gap-30 items-center">
-      <Navbar />
+      <Navbar navRight={<QuickLinks  custom={"flex gap-0.5 px-2"}  li={"xxl:flex hidden items-center whitespace-nowrap"}/>} navRightCss={"hidden"} />
       <div className="w-full max-w-360 flex flex-col gap-10 mb-20">
         <div className="flex md:justify-between  items-center">
           <ProductsHeading heading={"Your Cart "} />
@@ -86,7 +87,9 @@ const Cart = () => {
                   </div>
                   <Trash onClick={() => handleTrash(item)} />
                 </div>
-                <span className="md:text-xl text-base font-medium">{item.price}</span>
+                <span className="md:text-xl text-base font-medium">
+                  {item.price}
+                </span>
               </div>
             ))}
           </div>

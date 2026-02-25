@@ -12,7 +12,7 @@ import Footer from "../Footer";
 const Home = () => {
   return (
     <div className="w-full flex justify-center flex-col items-center">
-      <Navbar />
+      <Navbar  />
       <Carousel />
       <Featured />
       <Categories />
