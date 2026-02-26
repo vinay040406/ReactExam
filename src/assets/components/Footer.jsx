@@ -50,7 +50,7 @@ const Footer = () => {
       <div className="flex flex-col bg-[#414143] w-full lg:px-30 md:px-10 md:pt-20 pt-8 px-3 text-white">
         <div className="flex justify-between">
           <div className="flex flex-col gap-4 max-w-81.5 w-full">
-            <h5 className="md:text-xl text-base mr-3 font-normal">
+            <h5 className="md:text-xl text-base lg:pr-0 pr-4 font-normal">
               Eco-friendly yoga mats that blend-high performance.
             </h5>
             <span className="text-xl font-medium">Follow us On :</span>
@@ -70,22 +70,26 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex justify-between max-w-120 w-full">
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 md:p-0 p-3">
               <h5 className="text-xl font-medium">Quick Links</h5>
-              <QuickLinks li={"flex"} custom={"gap-4 flex flex-col"} />
+              <QuickLinks
+                text1={"Leggings"}
+                text2={"Women’s Clothing"}
+                text3={"Men’s Clothing"}
+              />
             </div>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 md:p-0 p-2">
               <h5 className="text-xl font-medium">Other Links</h5>
-              <ul className="flex flex-col gap-5">
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Terms of Service</li>
-              </ul>
+              <QuickLinks
+                text1={"Privacy Policy"}
+                text2={"Terms of Service"}
+                text3={"Terms of Service"}
+              />
             </div>
           </div>
         </div>
         <div className="border-t border-t-[#878585] mt-8 py-4 justify-center flex">
-          <span className="text-sm  tracking-wide font-normal">
+          <span className="sm:text-sm text-xs  tracking-wide font-normal">
             Copyright © 2025 Yogalis. All Rights Reserved.
           </span>
         </div>

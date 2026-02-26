@@ -1,11 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Cart, FreeIcon, Search, User } from "../../Icons";
 import { Link, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
-
 import { RxCross2 } from "react-icons/rx";
 
-const Navbar = ({ navRightCss, navRight }) => {
+const Navbar = () => {
   const navigate = useNavigate();
   const inputRef = useRef();
   const [inputValue, setInputValue] = useState();
@@ -16,12 +15,23 @@ const Navbar = ({ navRightCss, navRight }) => {
     inputRef.current.style.display = "block";
   };
 
+  function MobileMenu() {
+    useEffect(() => {
+      if (hamburgerState) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    }, [hamburgerState]);
+  }
+  MobileMenu();
+
   return (
     <div className="sticky top-0 flex flex-col max-w-360 w-full z-1000 ">
       <div className="w-full bg-white flex md:justify-between justify-center xl:px-30  md:px-10 py-3">
         <div className="flex items-center gap-2 text-center ">
           <FreeIcon />
-          <p className="tracking-wide">
+          <p className="tracking-wide sm:text-xl text-xs">
             Free Delivery & Free Returns Within 15 Days
           </p>
         </div>
@@ -32,7 +42,7 @@ const Navbar = ({ navRightCss, navRight }) => {
           onChange={(e) => {
             setInputValue(e.target.value);
           }}
-          className="border border-[rgba(1,198,181,1)] hidden max-w-100 px-3 py-1 w-full rounded-lg"
+          className="border border-[rgba(1,198,181,1)] hidden max-w-100 px-3 py-.5 w-full rounded-lg"
           placeholder="Search for Products"
         />
         <div className="gap-2 hidden md:flex">
@@ -58,11 +68,7 @@ const Navbar = ({ navRightCss, navRight }) => {
             className="h-15 w-15 object-cover"
           />
         </Link>
-        {navRight}
-        <ul
-          // className={`md:flex hidden gap-6 py-5 md:relative fixed top-0 left-0  menu  duration-200 ease-in md:flex-row flex-col md:h-auto md:w-auto justify-center items-center h-screen w-screen  md:bg-transparent bg-[rgba(1,198,181,1)] ${hamburgerState ? "" : ""}`}
-          className={` ${hamburgerState ? "show" : ""} flex gap-6 menu py-5 ${navRightCss}`}
-        >
+        <ul className={` ${hamburgerState ? "show" : ""} flex gap-6 menu py-5`}>
           <Link to={"/"}>
             <li>Home</li>
           </Link>

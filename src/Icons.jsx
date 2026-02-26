@@ -114,46 +114,37 @@ export const Cart = ({ onClick }) => {
   );
 };
 
-export const LeftArrow = () => {
+export const LeftArrow = ({ className }) => {
   return (
     <svg
-      width="50"
-      height="50"
-      viewBox="0 0 50 50"
+      className={`${className}`}
+      width="9"
+      height="15"
+      viewBox="0 0 9 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g opacity="0.65">
-        <rect
-          x="0.5"
-          y="0.5"
-          width="49"
-          height="49"
-          rx="24.5"
-          stroke="#414143"
-        />
-        <path
-          d="M29.2438 30.657L27.8298 32.071L20.7578 25.001L27.8298 17.929L29.2438 19.343L23.5868 25L29.2438 30.657Z"
-          fill="#414143"
-        />
-      </g>
+      <path
+        d="M8.486 12.728L7.072 14.142L0 7.072L7.072 0L8.486 1.414L2.829 7.071L8.486 12.728Z"
+        fill="currentColor"
+      />
     </svg>
   );
 };
 
-export const RightArrow = () => {
+export const RightArrow = ({ className }) => {
   return (
     <svg
-      width="50"
-      height="50"
-      viewBox="0 0 50 50"
+      className={`${className}`}
+      width="9"
+      height="15"
+      viewBox="0 0 9 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="50" height="50" rx="25" fill="#01C6B5" />
       <path
-        d="M20.7562 19.343L22.1702 17.929L29.2422 24.999L22.1702 32.071L20.7562 30.657L26.4132 25L20.7562 19.343Z"
-        fill="white"
+        d="M-0.000160217 1.41403L1.41384 2.95639e-05L8.48584 7.07003L1.41384 14.142L-0.000160217 12.728L5.65684 7.07103L-0.000160217 1.41403Z"
+        fill="currentColor"
       />
     </svg>
   );
@@ -270,9 +261,10 @@ export const Support = () => {
   );
 };
 
-export const Arc1 = () => {
+export const Arc1 = ({ className }) => {
   return (
     <svg
+      className={className}
       width="245"
       height="29"
       viewBox="0 0 245 29"

@@ -19,20 +19,20 @@ const Blog = () => {
           }
         />
       </div>
-      <div className="w-full flex justify-center mt-10 flex-wrap gap-13">
+      <div className="w-full flex justify-center md:mt-10 flex-wrap md:gap-13">
         {blogData.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col  gap-2 max-w-91 w-full cursor-pointer hover:shadow-2xl hover:rounded:lg hover:p-3"
+            className="flex group flex-col  gap-2 max-w-91 w-full cursor-pointer duration-300 ease-in hover:shadow-2xl hover:rounded:lg p-3"
           >
             <img
-              className="object-cover h-full w-full"
+              className="object-cover group-hover:scale-102 h-full w-full"
               src={item.imageSrc}
               alt=""
             />
             <span className="text-base font-normal">May 25, 2025</span>
             <h3 className="text-2xl font-semibold">{item.heading}</h3>
-            <p className="text-base font-normal tracking-wide">{item.desc}</p>
+            <p className="text-base font-normal tracking-wide text-[#414143]">{item.desc}</p>
             <span
               className="cursor-pointer flex items-center gap-2 text-base font-medium text-[rgba(1,198,181,1)]"
               onClick={() => {

@@ -28,7 +28,7 @@ const FAQ = () => {
     setOpen(open === val ? null : val);
   };
   return (
-    <div className="max-w-360 lg:px-30 p-10 lg:py-20 w-full">
+    <div className="max-w-360 lg:px-30 sm:p-10 p-5 pb-20 lg:pb-30 w-full">
       <div className="flex flex-col gap-10">
         <ProductsHeading
           customize={"justify-center text-center"}
@@ -42,7 +42,9 @@ const FAQ = () => {
               className={`flex flex-col border gap-2 ${open === index ? " border-[rgba(1,198,181,1)]" : "border-[rgba(65,65,67,0.4)] "} lg:px-10 px-3 py-5`}
             >
               <div className="flex justify-between items-center">
-                <h4 className="md:text-xl text-[20px] font-medium">{item.ques}</h4>
+                <h4 className="md:text-xl text-[20px] font-medium">
+                  {item.ques}
+                </h4>
                 <span
                   onClick={() => {
                     handleToggle(index);
@@ -51,6 +53,7 @@ const FAQ = () => {
                   {open === index ? <UpArrow /> : <DownArrow />}
                 </span>
               </div>
+
               {open === index && (
                 <p className="text-base font-normal tracking-wider">
                   {item.ans}

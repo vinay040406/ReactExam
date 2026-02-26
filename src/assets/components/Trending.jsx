@@ -1,9 +1,9 @@
 import React from "react";
 import ProductsHeading from "./Common/ProductsHeading";
 import ProductCard from "./Common/ProductCard";
-import { LeftArrow, RightArrow } from "../../Icons";
 import { trendingData } from "../Data/PageData";
 import Button from "./Common/Button";
+import { Left, Right } from "./Common/Arrow";
 
 const Trending = () => {
   const handleClick = (value) => {
@@ -15,8 +15,8 @@ const Trending = () => {
     <div className="max-w-360 w-full lg:px-30 p-10 lg:py-20 flex flex-col gap-10 items-center">
       <ProductsHeading
         customize={"justify-between"}
-        svg1={<LeftArrow />}
-        svg2={<RightArrow />}
+        svg1={<Left />}
+        svg2={<Right />}
         heading={"Trending Product's"}
         desc={"Use this area to describe the collection."}
       />
@@ -34,8 +34,8 @@ const Trending = () => {
               />
             </div>
             <div className="flex flex-col gap-3 ">
-              <h3 className="text-2xl font-semibold">{item.name}</h3>
-              <p className="text-base font-normal">{item.desc}</p>
+              <h3 className="text-2xl font-medium">{item.name}</h3>
+              <p className="text-base font-normal text-[#414143]">{item.desc}</p>
               <div className="flex justify-between">
                 <span className="font-bold text-2xl">{item.price}</span>
                 <span>{item.ratingSrc}</span>
@@ -43,7 +43,7 @@ const Trending = () => {
               <Button
                 text={"Shop Now"}
                 padding={
-                  "py-3 border border-[#414143] text-black hover:bg-[rgba(1,198,181,1)] hover:text-white"
+                  "py-3 border border-[#414143] text-black hover:bg-[rgba(1,198,181,1)] hover:text-white hover:border-none"
                 }
               />
             </div>

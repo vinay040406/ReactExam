@@ -12,11 +12,12 @@ const ProductCard = ({
   spanText,
   spanPrice,
   onClick,
+  ref,
 }) => {
   return (
-    <div className="flex flex-col gap-5 text-center">
+    <div ref={ref} className="flex flex-col gap-5 text-center group">
       <div
-        className={`bg-[rgba(245,245,245,1)] ${height} flex justify-center items-center relative  peer duration-200 ease-in`}
+        className={`bg-[rgba(245,245,245,1)] ${height} flex justify-center items-center relative duration-200 ease-in`}
       >
         <div className="flex justify-between px-5 absolute w-full top-6 items-center">
           <span className={`text-xl font-normal px-7 py-2 ${tag}`}>
@@ -27,7 +28,7 @@ const ProductCard = ({
               onClick={(e) => {}}
               stroke="green"
               fill="#01C6B5"
-              className="overflow-hidden"
+              className="overflow-hidden z-101"
             />
           </div>
         </div>
@@ -38,7 +39,7 @@ const ProductCard = ({
         />
       </div>
       <div
-        className={`bg-[rgba(0,0,0,0.3)] absolute ${peerHeight} peer-hover:flex hidden duration-200 ease-in p-10 justify-center items-center`}
+        className={`bg-[rgba(0,0,0,0.3)] absolute ${peerHeight} hidden group-hover:flex duration-200 ease-in p-10 justify-center items-center`}
       >
         <Button
           onClick={onClick}

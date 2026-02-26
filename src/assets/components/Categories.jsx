@@ -11,10 +11,10 @@ const Categories = () => {
   };
 
   return (
-    <div className="max-w-360 w-full lg:px-30 md:px-10 px-3 py-20 flex flex-col gap-10">
+    <div className="max-w-360 w-full lg:px-30 md:px-10 px-3 py-10 flex flex-col gap-10">
       <ProductsHeading
         customize={"justify-between"}
-        heading={"SHOP OUR CATEGORIES"}
+        heading={"Shop Our Categories"}
         svg1={
           <Button
             text={"View All"}

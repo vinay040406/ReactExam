@@ -2,31 +2,50 @@ import { Rating } from "../../Icons";
 
 export const carouselArray = [
   {
-    bgImage: "/Images/1st.jpg",
+    id: 1,
     title: "ELEVATE YOUR PRATICE",
-    heading: "NATURE - INSPIRED",
+    heading: "Nature - Inspired",
     desc: "Eco-friendly yoga mats that blend-high performance with stunning, nature-inspired designs. Each product is thoughtfully crafted to elevate your yoga practice.",
+    bgImage: "/Images/1st.png",
   },
   {
-    bgImage: "/Images/1st.jpg",
+    id: 2,
     title: "ELEVATE YOUR PRATICE",
-    heading: "NATURE - INSPIRED",
+    heading: "Nature - Inspired",
     desc: "Eco-friendly yoga mats that blend-high performance with stunning, nature-inspired designs. Each product is thoughtfully crafted to elevate your yoga practice.",
+    bgImage: "/Images/2nd.png",
   },
   {
-    bgImage: "/Images/1st.jpg",
+    id: 3,
     title: "ELEVATE YOUR PRATICE",
-    heading: "NATURE - INSPIRED",
+    heading: "Nature - Inspired",
     desc: "Eco-friendly yoga mats that blend-high performance with stunning, nature-inspired designs. Each product is thoughtfully crafted to elevate your yoga practice.",
+    bgImage: "/Images/3rd.png",
   },
   {
-    bgImage: "/Images/1st.jpg",
+    id: 4,
     title: "ELEVATE YOUR PRATICE",
-    heading: "NATURE - INSPIRED",
+    heading: "Nature - Inspired",
     desc: "Eco-friendly yoga mats that blend-high performance with stunning, nature-inspired designs. Each product is thoughtfully crafted to elevate your yoga practice.",
+    bgImage: "/Images/4th.png",
   },
 ];
 export const featuredData = [
+  {
+    productName: "Round Yoga Mat",
+    price: "€14.95",
+    imageSrc: "/Images/featuredProduct1.png",
+  },
+  {
+    productName: "Non-Slip Travel Yoga Mat",
+    price: "€14.95",
+    imageSrc: "/Images/featuredProduct2.png",
+  },
+  {
+    productName: "Foldable Yoga Mat",
+    price: "€31.95",
+    imageSrc: "/Images/featuredProduct3.png",
+  },
   {
     productName: "Round Yoga Mat",
     price: "€14.95",

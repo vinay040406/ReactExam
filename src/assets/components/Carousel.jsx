@@ -1,60 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./Common/Button";
 import { carouselArray } from "../Data/PageData";
 
 const Carousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   useEffect(() => {
-    const carousel = document.querySelector(".parent");
-    let scrollAmount = 0;
-    const scrollPerClick = window.innerWidth;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselArray.length);
+    }, 5000);
 
-    const scrollInterval = setInterval(() => {
-      if (scrollAmount < carousel.scrollWidth - carousel.clientWidth) {
-        scrollAmount += scrollPerClick;
-        carousel.scrollTo({
-          left: scrollAmount,
-          behavior: "smooth",
-        });
-      } else {
-        scrollAmount = 0;
-        carousel.scrollTo({
-          left: 0,
-          behavior: "smooth",
-        });
-      }
-    }, 3000);
-
-    return () => clearInterval(scrollInterval);
-  }, []);
+    return () => clearInterval(interval);
+  }, [carouselArray.length]);
 
   return (
-    <div className="w-full flex overflow-y-hidden parent">
-      {carouselArray.map((item, index) => (
+    <div className="relative w-full max-w-360 md:min-h-192 min-h-180 md:text-left text-center " >
+      {carouselArray.map((slide, index) => (
         <div
-          key={index}
-          className="w-full shrink-0  flex justify-center items-center"
+          key={slide.id}
+          className={`slides z-10 bg-cover bg-center absolute w-full h-full transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ backgroundImage: `url('${slide.bgImage}')` }}
         >
-          <div className="max-w-360 relative w-full flex justify-center flex-col bg-[linear-gradient(to_right,rgba(0,0,0,0),rgba(0,0,0,1))]">
-            <img
-              className="md:h-full h-182.25 w-full scale-x-[-1] object-cover object-center "
-              src={item.bgImage}
-              alt=""
-            />
-            <div className="absolute max-w-147.25 w-full md:p-0 p-5 flex flex-col text-white md:items-start md:text-left text-center items-center md:ml-30 ml-0 gap-1">
-              <h3 className="md:text-[24px] text-base font-normal tracking-widest">
-                {item.title}
-              </h3>
-              <h1 className="font-bold xl:text-[66px] lg:text-[55px] text-[32px] md:whitespace-nowrap tracking-wide">
-                {item.heading}
-              </h1>
-              <p className="md:text-[20px] text-base font-normal">
-                {item.desc}
-              </p>
-              <Button
-                text={" Shop Now"}
-                padding={"px-6 py-3 mt-4 bg-[rgba(1,198,181,1)] text-white"}
-              />
-            </div>
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              background:
+                "linear-gradient(to right, #00000000 10%, #00000000 1%)",
+            }}
+          />
+          <div className="relative z-20 text-white h-full flex flex-col md:items-start items-center justify-center lg:px-35 px-5">
+            <h1 className="tracking-widest text-xs sm:text-sm md:text-base lg:text-lg font-normal">
+              {slide.title}
+            </h1>
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight mt-2 sm:mt-3 md:mt-4">
+              {slide.heading}
+            </h1>
+            <h1 className="font-normal text-sm sm:text-base md:text-lg lg:text-xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl mt-3 sm:mt-4 md:mt-5 leading-relaxed">
+              {slide.desc}
+            </h1>
+            <button className="bg-[#01C6B5] px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-3.5 text-sm sm:text-base md:text-lg font-medium mt-6 sm:mt-8 md:mt-10 hover:bg-[#00b39a] transition-colors">
+              Shop now
+            </button>
           </div>
         </div>
       ))}
