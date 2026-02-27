@@ -1,4 +1,4 @@
-import { Rating } from "../../Icons";
+import { Rating } from "../Icons";
 
 export const carouselArray = [
   {

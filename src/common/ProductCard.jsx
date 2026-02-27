@@ -13,11 +13,12 @@ const ProductCard = ({
   spanPrice,
   onClick,
   ref,
+  pText,
 }) => {
   return (
     <div ref={ref} className="flex flex-col gap-5 text-center group">
       <div
-        className={`bg-[rgba(245,245,245,1)] ${height} flex justify-center items-center relative duration-200 ease-in`}
+        className={`bg-[rgba(245,245,245,1)]  flex justify-center items-center relative duration-200 ease-in`}
       >
         <div className="flex justify-between px-5 absolute w-full top-6 items-center">
           <span className={`text-xl font-normal px-7 py-2 ${tag}`}>
@@ -33,7 +34,7 @@ const ProductCard = ({
           </div>
         </div>
         <img
-          className="object-contain object-center h-full w-full"
+          className={`object-contain object-center ${height}`}
           src={imageSrc}
           alt=""
         />
@@ -48,9 +49,9 @@ const ProductCard = ({
         />
       </div>
       <span
-        className={`${spanText} font-normal tracking-wide flex justify-center   `}
+        className={`${spanText} tracking-wide flex   `}
       >
-        {productName} <p>{spanPrice}</p>
+        {productName} <p className={`${pText}`}>{spanPrice}</p>
       </span>
     </div>
   );

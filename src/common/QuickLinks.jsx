@@ -1,4 +1,4 @@
-import { DownArrow } from "../../../Icons";
+import { DownArrow } from "../Icons";
 
 const QuickLinks = ({ text1, text2, text3 }) => {
   return (

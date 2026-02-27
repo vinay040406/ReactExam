@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar";
-import ProductsHeading from "../Common/ProductsHeading";
+import ProductsHeading from "../common/ProductsHeading";
 import { Minus, Plus, Trash } from "../../../Icons";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../Common/Button";
+import Button from "../common/Button";
 
 const Cart = () => {
   const navigate = useNavigate();

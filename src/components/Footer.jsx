@@ -1,16 +1,16 @@
 import React from "react";
-import ProductsHeading from "./Common/ProductsHeading";
-import Button from "./Common/Button";
-import { Facebook, LinkedIn, Twitter, Youtube } from "../../Icons";
-import QuickLinks from "./Common/QuickLinks";
+import QuickLinks from "../common/QuickLinks"
 import { Link } from "react-router-dom";
+import ProductsHeading from "../common/ProductsHeading";
+import Button from "../common/Button";
+import { Facebook, LinkedIn, Twitter, Youtube } from "../Icons";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col lg:mt-35 md:mt-25 mt-10 max-w-360 w-full  overflow-hidden">
       <div className="bg-[rgba(241,241,241)] xl:h-113.5 h-fit max-w-full md:px-10 px-3 flex xl:flex-row flex-col justify-between items-center">
         <img
-          className="h-full max-w-93 w-full object-fit "
+          className="h-full max-w-93 w-full object-fit ml-[34.32px] "
           src="/Images/footer1.png"
           alt=""
         />
@@ -42,7 +42,7 @@ const Footer = () => {
           </form>
         </div>
         <img
-          className="h-full w-fit object-cover  "
+          className="h-113.5 w-[318.5] object-cover mr-12 "
           src="/Images/footer2.png"
           alt=""
         />

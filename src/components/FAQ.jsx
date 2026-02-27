@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ProductsHeading from "./Common/ProductsHeading";
-import { DownArrow, UpArrow } from "../../Icons";
+import ProductsHeading from "../common/ProductsHeading";
+import { DownArrow, UpArrow } from "../Icons";
 
 const FAQ = () => {
   const [open, setOpen] = useState();
@@ -28,14 +28,14 @@ const FAQ = () => {
     setOpen(open === val ? null : val);
   };
   return (
-    <div className="max-w-360 lg:px-30 sm:p-10 p-5 pb-20 lg:pb-30 w-full">
+    <div className="max-w-212.25 lg:mt-35 md:mt-25 mt-10 2xl:px-0 px-10 w-full md:gap-12.5 gap-8">
       <div className="flex flex-col gap-10">
         <ProductsHeading
           customize={"justify-center text-center"}
           heading={"Frequently Asked Questions"}
           desc={"Real Questions. Expert Answers. Total Confidence."}
         />
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6.25">
           {questions.map((item, index) => (
             <div
               key={index}

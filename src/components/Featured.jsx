@@ -1,8 +1,8 @@
 import React from "react";
-import ProductsHeading from "./Common/ProductsHeading";
-import ProductCard from "./Common/ProductCard";
-import { featuredData } from "../Data/PageData";
-import { Left, Right } from "./Common/Arrow";
+import ProductsHeading from "../common/ProductsHeading";
+import ProductCard from "../common/ProductCard";
+import { featuredData } from "../utils/PageData";
+import { Left, Right } from "../common/Arrow";
 import { useRef } from "react";
 
 const Featured = () => {
@@ -13,21 +13,17 @@ const Featured = () => {
     localStorage.setItem("Products", JSON.stringify(existingProducts));
   };
   return (
-    <div className="max-w-360 lg:px-30 lg:py-20 p-10  w-full">
-      <div className="flex flex-col lg:gap-5 gap-8">
+    <div className="max-w-285 w-full lg:mt-32.5 md:mt-25 mt-10 2xl:px-0 px-10">
+      <div className="flex flex-col md:gap-12.5 gap-8">
         <ProductsHeading
-          customize={"justify-between"}
-          svg1={
-            <Left
-              onClick={() => {
-              }}
-            />
-          }
+          customize={"2xl:justify-between"}
+          svg1={<Left onClick={() => {}} />}
           svg2={<Right onClick={() => {}} />}
+          svgCustomize={"2xl:flex hidden"}
           heading={"Featured Products"}
           desc={"Use this area to describe the collection."}
         />
-        <div className="flex gap-13 flex-wrap justify-center">
+        <div className="flex  gap-6 flex-wrap justify-center">
           {featuredData.slice(0, 3).map((item, index) => (
             <ProductCard
               ref={productRef}
@@ -36,8 +32,8 @@ const Featured = () => {
               price={item.price}
               imageSrc={item.imageSrc}
               productName={item.productName}
-              height={"h-110.25 sm:w-91 w-70"}
-              peerHeight={"h-110.25 w-91"}
+              height={"h-110.25 w-[364px]"}
+              peerHeight={"max-w-[364px] w-full h-110.25"}
               tag={"border-[rgba(255,255,255,1)] rounded-4xl bg-white"}
               spanText={"text-2xl"}
             />

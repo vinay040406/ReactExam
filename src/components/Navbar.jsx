@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Cart, FreeIcon, Search, User } from "../../Icons";
+import { Cart, FreeIcon, Search, User } from "../Icons";
 import { Link, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <div className="sticky top-0 flex flex-col max-w-360 w-full z-1000 ">
-      <div className="w-full bg-white flex md:justify-between justify-center xl:px-30  md:px-10 py-3">
+      <div className="w-full bg-white flex md:justify-between justify-center xl:px-30  md:px-10 py-2">
         <div className="flex items-center gap-2 text-center ">
           <FreeIcon />
           <p className="tracking-wide sm:text-xl text-xs">
@@ -60,24 +60,32 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="w-full text-white font-medium text-lg bg-[rgba(1,198,181,1)] xl:px-30  px-10 flex justify-between items-center">
+      <div className="w-full text-white lg:py-5 md:py-4 py-2 font-medium text-lg bg-[rgba(1,198,181,1)] xl:px-30  px-10 flex justify-between items-center">
         <Link to={"/"}>
-          <img
-            src="/Images/Logo.png"
-            alt=""
-            className="h-15 w-15 object-cover"
-          />
+          <span>Logo</span>
         </Link>
-        <ul className={` ${hamburgerState ? "show" : ""} flex gap-6 menu py-5`}>
+        <ul className={` ${hamburgerState ? "show" : ""} flex gap-6 menu`}>
           <Link to={"/"}>
             <li>Home</li>
           </Link>
           <Link>
             <li>Contact</li>
           </Link>
-          <Link to={"/cart"}>
-            <li>Cart</li>
-          </Link>
+
+          {hamburgerState && (
+            <ul className="flex flex-col gap-6 text-center">
+              <Link to={"/cart"}>
+                <li className="relative">
+                  Cart
+                  <sup className="absolute top-1  text-white">
+                    {existingProducts?.length}
+                  </sup>
+                </li>
+              </Link>
+              <li>Search Products</li>
+              <li>Profile</li>
+            </ul>
+          )}
         </ul>
         {hamburgerState ? (
           <RxCross2
