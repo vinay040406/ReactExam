@@ -1,61 +1,69 @@
+import useEmblaCarousel from "embla-carousel-react";
 import React from "react";
-import ProductsHeading from "../common/ProductsHeading";
-import ProductCard from "../common/ProductCard";
+import ProductsHeading from "../components/common/ProductsHeading";
+import ProductCard from "../components/common/ProductCard";
 import { trendingData } from "../utils/PageData";
-import Button from "../common/Button";
-import { Left, Right } from "../common/Arrow";
+import Button from "../components/common/Button";
+import { Rating } from "../utils/Icons";
+import { Left, Right } from "./common/Arrow";
 
-const Trending = () => {
-  const handleClick = (value) => {
-    const existingProducts = JSON.parse(localStorage.getItem("Products")) || [];
-    existingProducts.push(value);
-    localStorage.setItem("Products", JSON.stringify(existingProducts));
-  };
+const Featured = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  const handleNext = () => emblaApi?.scrollNext();
+  const handlePrev = () => emblaApi?.scrollPrev();
+
   return (
-    <div className="max-w-285 lg:mt-35 md:mt-25 mt-10 2xl:px-0 px-10 w-full flex flex-col items-center md:gap-10 gap-7">
-      <ProductsHeading
-        customize={"lg:justify-between justify-center"}
-        svg1={<Left />}
-        svg2={<Right />}
-        svgCustomize={"lg:flex hidden"}
-        heading={"Trending Product's"}
-        desc={"Use this area to describe the collection."}
-      />
-      <div className="flex  justify-center gap-6 flex-wrap ">
-        {trendingData.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col p-4 duration-200 ease-in h-132.5 gap-4 cursor-pointer border border-[#0000000D] hover:shadow-2xl md:w-91 "
-          >
-            <div className="h-68.75 overflow-hidden w-full flex justify-center">
-              <ProductCard
-                onClick={() => handleClick(item)}
-                imageSrc={item.imageSrc}
-                peerHeight={"h-[275px] max-w-91 w-full"}
-                height={"h-[275px] w-[364px] object-cover"}
-              />
-            </div>
-            <div className="flex flex-col gap-3 ">
-              <h3 className="text-2xl font-medium">{item.name}</h3>
-              <p className="text-base font-normal text-[#414143]">
-                {item.desc}
-              </p>
-              <div className="flex justify-between">
-                <span className="font-bold text-2xl">{item.price}</span>
-                <span>{item.ratingSrc}</span>
+    <div className="max-w-360 w-full lg:mt-32.5 md:mt-25 mt-10 2xl:px-0 sm:px-10 px-5">
+      <div className="flex flex-col md:gap-12.5 gap-8">
+        <ProductsHeading
+          customize={
+            "2xl:justify-between justify-center lg:text-left text-center 2xl:flex-row flex-col"
+          }
+          svg1={<Left onClick={handlePrev} />}
+          svg2={<Right onClick={handleNext} />}
+          heading={"Featured Products"}
+          desc={"Use this area to describe the collection."}
+        />
+
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-4">
+            {trendingData.map((item, index) => (
+              <div
+                key={index}
+                className="flex-none  w-full lg:w-1/2  xl:w-1/3 p-4 hover:shadow-[0_0_51.3px_0_rgba(0,0,0,0.1)]"
+              >
+                <ProductCard
+                  onClick={() => addToCart(item)}
+                  imageSrc={item.imageSrc}
+                  height={"h-[441px] w-full"}
+                  peerHeight={"h-[441px] w-full"}
+                  price={item.price}
+                  tag={
+                    "bg-white px-6 py-2 rounded-[88px] border border-[#0000000D]"
+                  }
+                />
+                <div className="flex flex-col items-start gap-3">
+                  <h3 className="text-2xl font-medium flex justify-center mt-6">
+                    {item.name}
+                  </h3>
+                  <p className="text-base font-normal tracking-widest opacity-75">
+                    {item.desc}
+                  </p>
+                  <div className="flex justify-between w-full">
+                    <span className="text-2xl font-bold">{item.price}</span>
+                    <span>{item.ratingSrc}</span>
+                  </div>
+                  <button className="duration-200 ease-in w-full py-3.5 border border-[#000000] text-xl font-medium hover:bg-[#01C6B5] hover:text-white hover:border-none">
+                    Shop Now
+                  </button>
+                </div>
               </div>
-              <Button
-                text={"Shop Now"}
-                padding={
-                  "py-3 border border-[#414143] text-black hover:bg-[rgba(1,198,181,1)] hover:text-white hover:border-none"
-                }
-              />
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
 };
-
-export default Trending;
+export default Featured;

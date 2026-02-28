@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import ProductsHeading from "../common/ProductsHeading";
-import { Minus, Plus, Trash } from "../Icons";
+import ProductsHeading from "../components/common/ProductsHeading";
+import { Minus, Plus, Trash } from "../utils/Icons";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../common/Button";
+import Button from "../components/common/Button";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const Cart = () => {
       <Navbar />
       <div className="w-full max-w-360 flex flex-col gap-10 mb-20">
         <div className="flex md:justify-between  items-center">
-          <ProductsHeading heading={"Your Cart "} customize={"px-5"} />
+          <ProductsHeading heading={"Your Cart "} customize={"px-5 lg:justify-start"} />
           <Link to={"/"}>
             <li className="md:whitespace-nowrap list-none underline decoration-1 md:text-2xl text-xl font-medium md:mr-0 mr-10 px-5">
               Continue Shopping

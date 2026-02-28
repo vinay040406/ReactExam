@@ -8,16 +8,16 @@ const ProductsHeading = ({
 }) => {
   return (
     <div
-      className={`flex ${customize} items-center lg:text-left text-center 2xl:justify-between justify-center w-full`}
+      className={`flex ${customize} items-center  justify-center w-full`}
     >
       <div className="flex flex-col gap-2">
-        <h2 className="text-[48px]  md:whitespace-nowrap font-semibold ">
+        <h2 className="md:text-[48px] sm:text-[40px] text-[35px] md:whitespace-nowrap font-semibold ">
           {heading}
         </h2>
         <p className="text-xl font-normal text-[#414143]">{desc}</p>
       </div>
 
-      <div className={` ${svgCustomize}  gap-4 items-center `}>
+      <div className={` ${svgCustomize}  gap-4 items-center flex 2xl:mt-0 mt-6`}>
         {svg1}
         {svg2}
       </div>

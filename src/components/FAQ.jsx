@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ProductsHeading from "../common/ProductsHeading";
-import { DownArrow, UpArrow } from "../Icons";
+import ProductsHeading from "../components/common/ProductsHeading";
+import { DownArrow, UpArrow } from "../utils/Icons";
 
 const FAQ = () => {
   const [open, setOpen] = useState();
@@ -28,7 +28,7 @@ const FAQ = () => {
     setOpen(open === val ? null : val);
   };
   return (
-    <div className="max-w-212.25 lg:mt-35 md:mt-25 mt-10 2xl:px-0 px-10 w-full md:gap-12.5 gap-8">
+    <div className="max-w-212.25 lg:mt-35 md:mt-25 mt-10 2xl:px-0 sm:px-10 px-5 w-full md:gap-12.5 gap-8">
       <div className="flex flex-col gap-10">
         <ProductsHeading
           customize={"justify-center text-center"}
@@ -38,6 +38,9 @@ const FAQ = () => {
         <div className="flex flex-col gap-6.25">
           {questions.map((item, index) => (
             <div
+              onClick={() => {
+                handleToggle(index);
+              }}
               key={index}
               className={`flex flex-col border gap-2 ${open === index ? " border-[rgba(1,198,181,1)]" : "border-[rgba(65,65,67,0.4)] "} lg:px-10 px-3 py-5`}
             >
@@ -45,13 +48,7 @@ const FAQ = () => {
                 <h4 className="md:text-xl text-[20px] font-medium">
                   {item.ques}
                 </h4>
-                <span
-                  onClick={() => {
-                    handleToggle(index);
-                  }}
-                >
-                  {open === index ? <UpArrow /> : <DownArrow />}
-                </span>
+                <span>{open === index ? <UpArrow /> : <DownArrow />}</span>
               </div>
 
               {open === index && (

@@ -1,23 +1,23 @@
 import React from "react";
-import QuickLinks from "../common/QuickLinks"
+import QuickLinks from "../components/common/QuickLinks";
 import { Link } from "react-router-dom";
-import ProductsHeading from "../common/ProductsHeading";
-import Button from "../common/Button";
-import { Facebook, LinkedIn, Twitter, Youtube } from "../Icons";
+import ProductsHeading from "../components/common/ProductsHeading";
+import Button from "../components/common/Button";
+import { Facebook, LinkedIn, Twitter, Youtube } from "../utils/Icons";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col lg:mt-35 md:mt-25 mt-10 max-w-360 w-full  overflow-hidden">
-      <div className="bg-[rgba(241,241,241)] xl:h-113.5 h-fit max-w-full md:px-10 px-3 flex xl:flex-row flex-col justify-between items-center">
+    <div className="flex flex-col lg:mt-35 md:mt-25 mt-10 max-w-417.5 w-full  overflow-hidden">
+      <div className="bg-[rgba(241,241,241)] xl:h-113.5 h-fit max-w-full md:px-10 px-3 flex xl:flex-row flex-col xl:p-0 p-5 justify-between items-center">
         <img
-          className="h-full max-w-93 w-full object-fit ml-[34.32px] "
+          className="h-full max-w-93 w-full object-fit ml-[34.32px] xl:flex hidden "
           src="/Images/footer1.png"
           alt=""
         />
-        <div className="flex flex-col items-center px-3">
+        <div className="flex flex-col items-center px-3 ">
           <ProductsHeading
             heading={"Subscribe To Our Newsletter"}
-            customize={"justify-center w-fit lg:mt-0 mt-8"}
+            customize={"justify-center w-fit lg:mt-0 mt-8 lg:text-left text-center "}
           />
           <p className="text-base font-normal tracking-wider max-w-135.25 w-full text-center text-[rgba(65,65,67,1)]">
             Get weekly updates on the newest design stories, case studies and
@@ -42,7 +42,7 @@ const Footer = () => {
           </form>
         </div>
         <img
-          className="h-113.5 w-[318.5] object-cover mr-12 "
+          className="h-113.5 w-[318.5] object-cover mr-12  xl:flex hidden"
           src="/Images/footer2.png"
           alt=""
         />

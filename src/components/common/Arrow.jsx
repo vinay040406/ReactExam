@@ -1,4 +1,4 @@
-import { LeftArrow, RightArrow } from "../Icons";
+import { LeftArrow, RightArrow } from "../../utils/Icons";
 
 export const Left = ({ onClick }) => {
   return (

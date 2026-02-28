@@ -1,4 +1,4 @@
-import { Rating } from "../Icons";
+import { Rating } from "./Icons";
 
 export const carouselArray = [
   {
@@ -82,6 +82,7 @@ export const categoryData = [
     productName: "Liberty Pattern Socks",
     price: "€13.95",
     imageSrc: "/Images/category4.png",
+    sale: true,
   },
   {
     productName: "Mat Bag with Pocket ",
@@ -92,6 +93,7 @@ export const categoryData = [
     productName: "Tibetan Singing Bowls",
     price: "€35.95",
     imageSrc: "/Images/category6.png",
+    sale: true,
   },
   {
     productName: "Soft Yoga Cushion",
@@ -102,11 +104,13 @@ export const categoryData = [
     productName: "Cotton Yoga Pants",
     price: "€44.95",
     imageSrc: "/Images/category8.png",
+    sale: true,
   },
   {
     productName: "Women's Long Wavy ",
     price: "€14.95",
     imageSrc: "/Images/category9.png",
+    sale: true,
   },
   {
     productName: "Travel Yoga Bag",
@@ -117,6 +121,7 @@ export const categoryData = [
     productName: "Yoga Workout Shorts",
     price: "€31.95",
     imageSrc: "/Images/category11.png",
+    sale: true,
   },
   {
     productName: "Cork Yoga Mat",
@@ -125,6 +130,27 @@ export const categoryData = [
   },
 ];
 export const trendingData = [
+  {
+    imageSrc: "/Images/trending1.png",
+    name: "Ultra Shaping Leggings",
+    desc: "Sculpting, slimming, supportive, stretchy, stylish, seamless",
+    price: "€42.00",
+    ratingSrc: <Rating />,
+  },
+  {
+    imageSrc: "/Images/trending2.png",
+    name: "horts and One-Strap Bra",
+    desc: "Sculpting, slimming, supportive, stretchy, stylish, seamless",
+    price: "€50.00",
+    ratingSrc: <Rating />,
+  },
+  {
+    imageSrc: "/Images/trending3.png",
+    name: "Sleeveless Sports Jacket ",
+    desc: "Sculpting, slimming, supportive, stretchy, stylish, seamless",
+    price: "€33.00",
+    ratingSrc: <Rating />,
+  },
   {
     imageSrc: "/Images/trending1.png",
     name: "Ultra Shaping Leggings",
